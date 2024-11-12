@@ -1,0 +1,49 @@
+@import '../node_modules/@angular/material/prebuilt-themes/indigo-pink.css';
+
+html, body {
+  overflow: hidden; 
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.stepper {
+  width: 80%; 
+  max-width: 1200px; 
+  margin: 20px auto; 
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; 
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px; 
+}
+
+.review-container {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.detail-item {
+  margin-bottom: 10px;
+}
+
+mat-form-field {
+  width: 100%; /* Make fields full width */
+  margin-bottom: 16px; /* Add spacing between fields */
+}
+
+
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

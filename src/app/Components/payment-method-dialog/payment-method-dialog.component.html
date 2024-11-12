@@ -1,0 +1,39 @@
+<h2 mat-dialog-title>Enter Payment Details</h2>
+<mat-dialog-content>
+  <form [formGroup]="paymentForm">
+    
+    <div *ngIf="selectedPaymentMethod === 'googlePay'">
+      <mat-form-field appearance="fill">
+        <mat-label>Google Pay ID</mat-label>
+        <input matInput formControlName="googlePayId" />
+      </mat-form-field>
+    </div>
+
+    <div *ngIf="selectedPaymentMethod === 'phonePayment'">
+      <mat-form-field appearance="fill">
+        <mat-label>Phone Payment ID</mat-label>
+        <input matInput formControlName="phonePaymentId" />
+      </mat-form-field>
+    </div>
+
+    <div *ngIf="selectedPaymentMethod === 'creditCard'">
+      <mat-form-field appearance="fill">
+        <mat-label>Credit Card Number</mat-label>
+        <input matInput formControlName="creditCardNumber" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Expiry Date</mat-label>
+        <input matInput formControlName="expiryDate" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>CVV</mat-label>
+        <input matInput formControlName="cvv" />
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="paymentForm.value" [disabled]="paymentForm.invalid">Submit</button>
+</mat-dialog-actions>

@@ -1,0 +1,28 @@
+header {
+  background-color: #3f51b5; /* Material indigo color */
+  color: white;
+  padding: 10px;  /* Reduced padding to decrease header height */
+  width: 100%; /* Ensures full-width */
+  box-sizing: border-box; /* Includes padding in total width */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}

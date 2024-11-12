@@ -1,0 +1,192 @@
+{
+  "users": [
+    {
+      "userId": 1,
+      "id": "1",
+      "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+      "body": "quia et suscipit\n..."
+    }
+  ],
+  "details": [
+    {
+      "id": "e6ab",
+      "name": "Chetan Sonwane",
+      "address": "pune",
+      "city": "pune",
+      "dob": "2024-10-28T00:00:00.000Z",
+      "occupation": "BE computer",
+      "phoneNumber": "08421663718"
+    },
+    {
+      "id": "15e3",
+      "name": "Chetan Sonwane",
+      "address": "pune",
+      "city": "pune",
+      "dob": "2024-10-28T00:00:00.000Z",
+      "occupation": "BE computer",
+      "phoneNumber": "08421663718"
+    },
+    {
+      "id": "0f37",
+      "name": "Chandrashekar",
+      "address": "pune",
+      "city": "pune",
+      "dob": "2024-10-28T00:00:00.000Z",
+      "occupation": "BE computer",
+      "phoneNumber": "08421663718"
+    },
+    {
+      "id": "4317",
+      "name": "Chetan Sonwane",
+      "address": "pune",
+      "city": "pune",
+      "dob": "2024-10-29T00:00:00.000Z",
+      "occupation": "BE computer",
+      "phoneNumber": "08421663718"
+    },
+    {
+      "id": "c160",
+      "name": "Chetan Sonwane",
+      "address": "5A, Gururkrupa, Shivram Nagar near shivram Temple",
+      "city": "Shahada",
+      "dob": "2024-10-17T00:00:00.000Z",
+      "occupation": "BE Computer",
+      "phoneNumber": "8421663718"
+    },
+    {
+      "id": "ed4b",
+      "name": "fdd",
+      "address": "dgddg",
+      "city": "fdfd",
+      "dob": "2024-10-24T00:00:00.000Z",
+      "occupation": "dfd",
+      "phoneNumber": "434343"
+    },
+    {
+      "id": "a12c",
+      "name": "",
+      "address": "",
+      "city": "",
+      "dob": null,
+      "occupation": "",
+      "phoneNumber": ""
+    },
+    {
+      "id": "9181",
+      "name": "Chetan Sonwane",
+      "address": "5A, Gurukrupa. Shivram Nagar, near shivram temple",
+      "city": "Shahada",
+      "dob": "2024-11-26T00:00:00.000Z",
+      "occupation": "BE Computer",
+      "phoneNumber": "8421663718"
+    },
+    {
+      "id": "133d",
+      "name": "Chetan Sonwane",
+      "address": "5A, Gurukrupa. Shivram Nagar, near shivram temple",
+      "city": "Shahada",
+      "dob": "2024-11-26T00:00:00.000Z",
+      "occupation": "BE Computer",
+      "phoneNumber": "8421663718"
+    },
+    {
+      "id": "c61c",
+      "name": "Chetan",
+      "address": "5A,Gurukrupa",
+      "city": "Pune",
+      "dob": "2024-11-18T00:00:00.000Z",
+      "occupation": "BE Computer",
+      "phoneNumber": "8421663718"
+    },
+    {
+      "id": "1b7b",
+      "name": "Chetan",
+      "address": "Pune",
+      "city": "Pune",
+      "dob": "2024-11-05T00:00:00.000Z",
+      "occupation": "BE Computer",
+      "phoneNumber": "8421663718"
+    },
+    {
+      "id": "dbce",
+      "name": "Chetan",
+      "address": "Pune",
+      "city": "Pune",
+      "dob": "2024-11-05T00:00:00.000Z",
+      "occupation": "BE Computer",
+      "phoneNumber": "8421663718"
+    },
+    {
+      "id": "5503",
+      "name": "Chetan",
+      "address": "Gurukrupa",
+      "city": "Pune",
+      "dob": "2024-11-06T00:00:00.000Z",
+      "occupation": "BE",
+      "phoneNumber": "8421663781"
+    },
+    {
+      "id": "76a8",
+      "name": "Chetan",
+      "address": "Gurukrupa",
+      "city": "Pune",
+      "dob": "2024-11-06T00:00:00.000Z",
+      "occupation": "BE",
+      "phoneNumber": "8421663781"
+    },
+    {
+      "id": "7e6d",
+      "name": "Chetan Sonwane",
+      "address": "5A, Gurukrupa",
+      "city": "Pune",
+      "dob": "2024-11-15T00:00:00.000Z",
+      "occupation": "BE Computer",
+      "phoneNumber": "84216637"
+    },
+    {
+      "id": "ed8b",
+      "name": "Chetan ",
+      "address": "5A gurukrupa",
+      "city": "Shahada",
+      "dob": "2024-10-02T00:00:00.000Z",
+      "occupation": "BE Computer",
+      "phoneNumber": "8421663718"
+    },
+    {
+      "id": "2e53",
+      "name": "Chetan Sonwane",
+      "address": "5A Gurukrupa",
+      "city": "Pune",
+      "dob": "2024-11-04T00:00:00.000Z",
+      "occupation": "BE Computer",
+      "phoneNumber": "8421663718"
+    },
+    {
+      "id": "6cae",
+      "name": "Chetan",
+      "address": "5A gurukrupa",
+      "city": "Pune",
+      "dob": "2024-11-04T00:00:00.000Z",
+      "occupation": "BE Computer",
+      "phoneNumber": "8421663718"
+    },
+    {
+      "id": "406f",
+      "name": "Chetan",
+      "address": "5A gurukrupa",
+      "city": "Pune",
+      "dob": "2024-11-04T00:00:00.000Z",
+      "occupation": "BE Computer",
+      "phoneNumber": "8421663718"
+    },
+    {
+      "id": "1b03",
+      "name": "Chetan",
+      "address": "5A gurukrupa",
+      "city": "Pune",
+      "dob": "2024-11-04T00:00:00.000Z",
+      "occupation": "BE Computer",
+      "phoneNumber": "8421663718"
+    }
+  ]
+}

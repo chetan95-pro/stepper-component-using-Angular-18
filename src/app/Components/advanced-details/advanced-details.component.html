@@ -1,0 +1,23 @@
+<form [formGroup]="formGroup">
+  <!-- Occupation Field -->
+  <mat-form-field appearance="fill">
+    <mat-label>Occupation</mat-label>
+    <input matInput formControlName="occupation" />
+  </mat-form-field>
+
+  <!-- Phone Number Field -->
+  <mat-form-field appearance="fill">
+    <mat-label>Phone Number</mat-label>
+    <input matInput formControlName="phoneNumber" />
+  </mat-form-field>
+
+  <!-- Payment Method Selection -->
+  <mat-form-field appearance="fill">
+    <mat-label>Payment Method</mat-label>
+    <mat-select formControlName="paymentMethod" (selectionChange)="selectPaymentMethod($event.value)">
+      <mat-option value="googlePay">Google Pay</mat-option>
+      <mat-option value="phonePayment">Phone Payment</mat-option>
+      <mat-option value="creditCard">Credit/Debit Card</mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>

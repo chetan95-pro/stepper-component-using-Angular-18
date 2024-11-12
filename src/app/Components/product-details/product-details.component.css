@@ -1,0 +1,22 @@
+mat-card {
+    margin: 20px;
+  }
+  
+  mat-card-header {
+    text-align: center;
+  }
+  
+  mat-card-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  
+  mat-card-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  mat-card-content {
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  

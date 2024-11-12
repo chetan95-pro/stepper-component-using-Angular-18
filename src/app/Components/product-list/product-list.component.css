@@ -1,0 +1,63 @@
+/* Container for the product list */
+.product-list-container {
+  display: flex;
+  flex-wrap: nowrap;             /* Prevent wrapping of images to the next line */
+  overflow-x: auto;             /* Enable horizontal scrolling */
+  gap: 16px;                    /* Space between images */
+  padding: 16px 0;              /* Padding at the top and bottom */
+  margin-bottom: 20px;          /* Margin below the product list */
+  max-height: 500px;            /* Optional: Set max-height to contain images */
+}
+
+/* Each product card */
+.product-card {
+  width: 250px;                 /* Fixed width for each product card */
+  flex-shrink: 0;               /* Prevent card from shrinking */
+  display: flex;
+  flex-direction: column;       /* Stack the content inside each card */
+  align-items: center;          /* Center-align content inside the card */
+  padding: 16px;                /* Padding inside each card */
+  border: 1px solid #ccc;       /* Border around each card */
+  border-radius: 8px;           /* Round corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for effect */
+  background-color: #fff;       /* White background */
+}
+
+/* Image styling */
+.product-image {
+  width: 100%;                  /* Make the image take the full width of the card */
+  height: auto;                 /* Keep the aspect ratio */
+  border-radius: 4px;           /* Optional: Round the corners of the image */
+}
+
+/* Product info (name, price, button) */
+.product-info {
+  margin-top: 8px;              /* Space between image and product info */
+  text-align: center;           /* Center-align the text */
+}
+
+.product-info h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.product-info p {
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.product-info button {
+  margin: 4px;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .product-list-container {
+    gap: 8px;                    /* Reduce space between cards on smaller screens */
+    padding: 8px 0;              /* Reduce padding */
+  }
+
+  .product-card {
+    width: 180px;                /* Make product cards smaller on mobile */
+  }
+}
