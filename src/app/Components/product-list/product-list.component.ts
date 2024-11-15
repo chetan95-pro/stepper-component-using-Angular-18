@@ -1,11 +1,13 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { ProductService } from '../../services/product-service.service';  // Import ProductService
-import { Product } from '../../Model/product.model';   // Import Product model
-import { CommonModule } from '@angular/common';  // Import CommonModule for ngIf/ngFor
-import { MatButtonModule } from '@angular/material/button';  // Import Material Button module
-import { MatIconModule } from '@angular/material/icon';  // Import Material Icon module
-import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';  // Import MatSnackBar
-import { Router } from '@angular/router';  // Import Router for navigation
+import { ProductService } from '../../services/product-service.service';
+import { Product } from '../../Model/product.model';
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -13,46 +15,52 @@ import { Router } from '@angular/router';  // Import Router for navigation
   styleUrls: ['./product-list.component.css'],
   standalone: true,
   imports: [
-    CommonModule,    // Import CommonModule for *ngIf and *ngFor
-    MatButtonModule, // Import Material Button module
-    MatIconModule,   // Import Material Icon module
-    MatSnackBarModule, // Import MatSnackBarModule for snackbar toasts
+    CommonModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSnackBarModule,
+    MatCardModule,
+    RouterModule
   ]
 })
 export class ProductListComponent implements OnInit {
-  products: Product[] = [];  // Store products from the service
-  @Output() addToCart = new EventEmitter<Product>();  // Emit event when adding to cart
-  @Output() viewProductDetails = new EventEmitter<Product>();  // Emit event when viewing product details
+  products: Product[] = [];
+  currentPage: number = 1;
+  pageSize: number = 12;
+  @Output() addToCart = new EventEmitter<Product>();
+  @Output() viewProductDetails = new EventEmitter<Product>();
 
   constructor(
     private productService: ProductService,
-    private snackBar: MatSnackBar,  // Inject MatSnackBar service
-    private router: Router          // Inject Router service for navigation
+    private snackBar: MatSnackBar,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe((products) => {
-      this.products = products;  // Assign products to the component's products array
+      this.products = products;
     });
   }
 
-  // Emit the selected product to the parent component
   onAddToCart(product: Product) {
     this.addToCart.emit(product);
-
-    // Show toast message
     this.snackBar.open(`${product.name} added to cart!`, 'Close', {
-      duration: 3000,  // Duration of the snack bar message
+      duration: 3000,
       horizontalPosition: 'center',
       verticalPosition: 'bottom',
     });
-
-    // Navigate to the Basic Details page after adding to cart
-    this.router.navigate(['/basic-details']);  // Replace with your desired route
+    this.router.navigate(['details/shipping-details']);
   }
 
-  // Emit the selected product to view its details
   onViewProductDetails(product: Product) {
     this.viewProductDetails.emit(product);
+  }
+
+  getRows(products: Product[]): Product[][] {
+    const rows = [];
+    for (let i = 0; i < products.length; i += 4) {
+      rows.push(products.slice(i, i + 4));
+    }
+    return rows;
   }
 }

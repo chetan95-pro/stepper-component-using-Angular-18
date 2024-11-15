@@ -1,11 +1,17 @@
 import { Injectable } from '@angular/core';
+<<<<<<< HEAD
 import { Observable, of } from 'rxjs';
+=======
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+>>>>>>> 6d4197f9c7f812b1dcabb015692247b13ef9c8dd
 import { Product } from '../Model/product.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
+<<<<<<< HEAD
   getProducts(): Observable<Product[]> {
     const products: Product[] = [
       {
@@ -69,7 +75,13 @@ export class ProductService {
         imageUrl: 'https://via.placeholder.com/150',
       },
     ];
+=======
+  private apiUrl = 'http://localhost:3000/products'; // JSON server URL
+>>>>>>> 6d4197f9c7f812b1dcabb015692247b13ef9c8dd
 
-    return of(products);
+  constructor(private http: HttpClient) {}
+
+  getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.apiUrl);
   }
 }

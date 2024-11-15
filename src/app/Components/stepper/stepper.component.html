@@ -15,9 +15,9 @@
     </div>
   </mat-step>
 
-  <!-- Step 2: Basic Details -->
+  <!-- Step 2: Contact Details -->
   <mat-step>
-    <ng-template matStepLabel>Basic Details</ng-template>
+    <ng-template matStepLabel>Contact Details</ng-template>
     <app-basic-details [formGroup]="basicForm"></app-basic-details>
 
     <div>
@@ -27,9 +27,9 @@
     </div>
   </mat-step>
 
-  <!-- Step 3: Advanced Details -->
+  <!-- Step 3: Shipping Address -->
   <mat-step>
-    <ng-template matStepLabel>Advanced Details</ng-template>
+    <ng-template matStepLabel>Shipping Address</ng-template>
     <app-advanced-details [formGroup]="advancedForm"></app-advanced-details>
 
     <div>
@@ -44,7 +44,7 @@
   <mat-step>
     <ng-template matStepLabel>Review Details</ng-template>
     <div class="review-container">
-      <h3>Review Your Details</h3>
+      <h3>Order Succefully</h3>
       <div class="review-details">
         <div><strong>Name:</strong> {{ basicForm.get('name')?.value }}</div>
         <div><strong>Address:</strong> {{ basicForm.get('address')?.value }}</div>
@@ -54,12 +54,6 @@
         <div><strong>Phone Number:</strong> {{ advancedForm.get('phoneNumber')?.value }}</div>
       </div>
 
-      <button mat-raised-button color="accent" (click)="toggleTableVisibility()">
-        Show Table
-      </button>
-
-      <!-- Show Table if isTableVisible is true -->
-      <app-record-table *ngIf="isTableVisible" [records]="records" (deleteRecord)="deleteRecord($event)"></app-record-table>
     </div>
 
     <div class="spacer"></div>

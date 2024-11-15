@@ -11,7 +11,7 @@ import { MatTableModule } from '@angular/material/table';
 import { BasicDetailsComponent } from '../basic-details/basic-details.component';
 import { AdvancedDetailsComponent } from '../advanced-details/advanced-details.component';
 import { RecordTableComponent } from '../record-table/record-table.component';
-import { ProductListComponent } from '../product-list/product-list.component';  // Import Product List
+import { ProductListComponent } from '../product-list/product-list.component'; // Import Product List
 
 @Component({
   selector: 'app-stepper',
@@ -28,20 +28,17 @@ import { ProductListComponent } from '../product-list/product-list.component';  
     BasicDetailsComponent,
     AdvancedDetailsComponent,
     RecordTableComponent,
-    ProductListComponent,  // Add ProductListComponent
+    ProductListComponent,
   ],
 })
 export class StepperComponent implements OnInit, AfterViewInit {
   basicForm: FormGroup;
   advancedForm: FormGroup;
-  records: any[] = [];  // Array to store multiple records
-  isTableVisible = false;  // Flag to control table visibility
+  records: any[] = [];
+  isTableVisible = false;
   submitted = false;
 
-  constructor(
-    private fb: FormBuilder,
-    private snackBar: MatSnackBar
-  ) {
+  constructor(private fb: FormBuilder, private snackBar: MatSnackBar) {
     this.basicForm = this.fb.group({
       name: ['', Validators.required],
       address: ['', Validators.required],
@@ -51,7 +48,10 @@ export class StepperComponent implements OnInit, AfterViewInit {
 
     this.advancedForm = this.fb.group({
       occupation: ['', Validators.required],
-      phoneNumber: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      phoneNumber: [
+        '',
+        [Validators.required, Validators.pattern('^[0-9]{10}$')],
+      ],
     });
   }
 
@@ -59,18 +59,14 @@ export class StepperComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {}
 
-  // Handle Add to Cart Action
   onAddToCart(product: any) {
     console.log(`${product.name} added to the cart.`);
   }
 
-  // Handle View Product Details Action
   onViewProductDetails(product: any) {
     console.log(`Viewing details for: ${product.name}`);
-    // Navigate to product details page or show product details in a modal
   }
 
-  // Handle Step 2 Submit Action (Advanced Details)
   submitAdvancedDetails(stepper: MatStepper) {
     if (this.advancedForm.valid) {
       const advancedDetails = this.advancedForm.value;
@@ -83,37 +79,27 @@ export class StepperComponent implements OnInit, AfterViewInit {
         phoneNumber: advancedDetails.phoneNumber,
       };
 
-      // Add the new record to the records array
       this.records.push(combinedDetails);
-
-      // Show success message
       this.openSnackBar('Advanced Details submitted successfully!', 'Close');
-
-      // Move to the next step
       stepper.next();
     }
   }
 
-  // Toggle table visibility
   toggleTableVisibility() {
-    this.isTableVisible = !this.isTableVisible;  // Toggle visibility of the table
+    this.isTableVisible = !this.isTableVisible;
   }
 
-  // Display Snackbar
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, { duration: 3000 });
   }
 
-  // Reset Stepper
   resetStepper(stepper: MatStepper) {
     this.basicForm.reset();
     this.advancedForm.reset();
     this.records = [];
-    this.isTableVisible = false;  // Hide table when reset
+    this.isTableVisible = false;
     stepper.reset();
   }
-
-  // Delete record from table
   deleteRecord(record: any) {
     const index = this.records.indexOf(record);
     if (index >= 0) {

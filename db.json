@@ -1,192 +1,112 @@
 {
-  "users": [
+  "products": [
     {
-      "userId": 1,
-      "id": "1",
-      "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-      "body": "quia et suscipit\n..."
-    }
-  ],
-  "details": [
-    {
-      "id": "e6ab",
-      "name": "Chetan Sonwane",
-      "address": "pune",
-      "city": "pune",
-      "dob": "2024-10-28T00:00:00.000Z",
-      "occupation": "BE computer",
-      "phoneNumber": "08421663718"
+      "id": 1,
+      "name": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 ",
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 ",
+      "price": 109.95,
+      "category": "men's clothing",
+      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "rating": { "rate": 3.9, "count": 120 }
     },
     {
-      "id": "15e3",
-      "name": "Chetan Sonwane",
-      "address": "pune",
-      "city": "pune",
-      "dob": "2024-10-28T00:00:00.000Z",
-      "occupation": "BE computer",
-      "phoneNumber": "08421663718"
+      "id": 2,
+      "name": "Mens Casual Premium Slim Fit T-Shirts",
+      "title": "Mens Casual Premium Slim Fit T-Shirts",
+      "price": 22.3,
+      "category": "men's clothing",
+      "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+      "rating": { "rate": 4.1, "count": 259 }
     },
     {
-      "id": "0f37",
-      "name": "Chandrashekar",
-      "address": "pune",
-      "city": "pune",
-      "dob": "2024-10-28T00:00:00.000Z",
-      "occupation": "BE computer",
-      "phoneNumber": "08421663718"
+      "id": 3,
+      "name": "Mens Casual Premium Slim Fit T-Shirts",
+      "title": "Mens Casual Premium Slim Fit T-Shirts",
+      "price": 55.99,
+      "category": "men's clothing",
+      "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+      "rating": { "rate": 4.7, "count": 500 }
     },
     {
-      "id": "4317",
-      "name": "Chetan Sonwane",
-      "address": "pune",
-      "city": "pune",
-      "dob": "2024-10-29T00:00:00.000Z",
-      "occupation": "BE computer",
-      "phoneNumber": "08421663718"
+      "id": 4,
+      "name": "Mens Casual Premium Slim Fit T-Shirts",
+      "title": "Mens Casual Premium Slim Fit T-Shirts",
+      "price": 15.99,
+      "category": "men's clothing",
+      "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+      "rating": { "rate": 2.1, "count": 430 }
     },
     {
-      "id": "c160",
-      "name": "Chetan Sonwane",
-      "address": "5A, Gururkrupa, Shivram Nagar near shivram Temple",
-      "city": "Shahada",
-      "dob": "2024-10-17T00:00:00.000Z",
-      "occupation": "BE Computer",
-      "phoneNumber": "8421663718"
+      "id": 5,
+      "name": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+      "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+      "price": 695,
+      "category": "jewelery",
+      "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+      "rating": { "rate": 4.6, "count": 400 }
     },
     {
-      "id": "ed4b",
-      "name": "fdd",
-      "address": "dgddg",
-      "city": "fdfd",
-      "dob": "2024-10-24T00:00:00.000Z",
-      "occupation": "dfd",
-      "phoneNumber": "434343"
+      "id": 6,
+      "name": "Solid Gold Petite Micropave",
+      "title": "Solid Gold Petite Micropave",
+      "price": 168,
+      "category": "jewelery",
+      "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+      "rating": { "rate": 3.9, "count": 70 }
     },
     {
-      "id": "a12c",
-      "name": "",
-      "address": "",
-      "city": "",
-      "dob": null,
-      "occupation": "",
-      "phoneNumber": ""
+      "id": 7,
+      "name": "White Gold Plated Princess",
+      "title": "White Gold Plated Princess",
+      "price": 9.99,
+      "category": "jewelery",
+      "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
+      "rating": { "rate": 3, "count": 400 }
     },
     {
-      "id": "9181",
-      "name": "Chetan Sonwane",
-      "address": "5A, Gurukrupa. Shivram Nagar, near shivram temple",
-      "city": "Shahada",
-      "dob": "2024-11-26T00:00:00.000Z",
-      "occupation": "BE Computer",
-      "phoneNumber": "8421663718"
+      "id": 8,
+      "name": "Pierced Owl Rose Gold Plated Stainless Steel Double",
+      "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
+      "price": 10.99,
+      "category": "jewelery",
+      "image": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
+      "rating": { "rate": 1.9, "count": 100 }
     },
     {
-      "id": "133d",
-      "name": "Chetan Sonwane",
-      "address": "5A, Gurukrupa. Shivram Nagar, near shivram temple",
-      "city": "Shahada",
-      "dob": "2024-11-26T00:00:00.000Z",
-      "occupation": "BE Computer",
-      "phoneNumber": "8421663718"
+      "id": 9,
+      "name": "WD 2TB Elements Portable External Hard Drive - USB 3.0",
+      "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0",
+      "price": 64,
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
+      "rating": { "rate": 3.3, "count": 203 }
     },
     {
-      "id": "c61c",
-      "name": "Chetan",
-      "address": "5A,Gurukrupa",
-      "city": "Pune",
-      "dob": "2024-11-18T00:00:00.000Z",
-      "occupation": "BE Computer",
-      "phoneNumber": "8421663718"
+      "id": 10,
+      "name": "SanDisk SSD PLUS 1TB Internal SSD - SATA III ",
+      "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III ",
+      "price": 109,
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
+      "rating": { "rate": 2.9, "count": 470 }
     },
     {
-      "id": "1b7b",
-      "name": "Chetan",
-      "address": "Pune",
-      "city": "Pune",
-      "dob": "2024-11-05T00:00:00.000Z",
-      "occupation": "BE Computer",
-      "phoneNumber": "8421663718"
+      "id": 11,
+      "name": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache ",
+      "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache ",
+      "price": 109,
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
+      "rating": { "rate": 4.8, "count": 319 }
     },
     {
-      "id": "dbce",
-      "name": "Chetan",
-      "address": "Pune",
-      "city": "Pune",
-      "dob": "2024-11-05T00:00:00.000Z",
-      "occupation": "BE Computer",
-      "phoneNumber": "8421663718"
-    },
-    {
-      "id": "5503",
-      "name": "Chetan",
-      "address": "Gurukrupa",
-      "city": "Pune",
-      "dob": "2024-11-06T00:00:00.000Z",
-      "occupation": "BE",
-      "phoneNumber": "8421663781"
-    },
-    {
-      "id": "76a8",
-      "name": "Chetan",
-      "address": "Gurukrupa",
-      "city": "Pune",
-      "dob": "2024-11-06T00:00:00.000Z",
-      "occupation": "BE",
-      "phoneNumber": "8421663781"
-    },
-    {
-      "id": "7e6d",
-      "name": "Chetan Sonwane",
-      "address": "5A, Gurukrupa",
-      "city": "Pune",
-      "dob": "2024-11-15T00:00:00.000Z",
-      "occupation": "BE Computer",
-      "phoneNumber": "84216637"
-    },
-    {
-      "id": "ed8b",
-      "name": "Chetan ",
-      "address": "5A gurukrupa",
-      "city": "Shahada",
-      "dob": "2024-10-02T00:00:00.000Z",
-      "occupation": "BE Computer",
-      "phoneNumber": "8421663718"
-    },
-    {
-      "id": "2e53",
-      "name": "Chetan Sonwane",
-      "address": "5A Gurukrupa",
-      "city": "Pune",
-      "dob": "2024-11-04T00:00:00.000Z",
-      "occupation": "BE Computer",
-      "phoneNumber": "8421663718"
-    },
-    {
-      "id": "6cae",
-      "name": "Chetan",
-      "address": "5A gurukrupa",
-      "city": "Pune",
-      "dob": "2024-11-04T00:00:00.000Z",
-      "occupation": "BE Computer",
-      "phoneNumber": "8421663718"
-    },
-    {
-      "id": "406f",
-      "name": "Chetan",
-      "address": "5A gurukrupa",
-      "city": "Pune",
-      "dob": "2024-11-04T00:00:00.000Z",
-      "occupation": "BE Computer",
-      "phoneNumber": "8421663718"
-    },
-    {
-      "id": "1b03",
-      "name": "Chetan",
-      "address": "5A gurukrupa",
-      "city": "Pune",
-      "dob": "2024-11-04T00:00:00.000Z",
-      "occupation": "BE Computer",
-      "phoneNumber": "8421663718"
+      "id": 12,
+      "name": "WD 4TB Gaming Drive Works with Playstation ",
+      "title": "WD 4TB Gaming Drive Works with Playstation ",
+      "price": 114.99,
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
+      "rating": { "rate": 4.3, "count": 405 }
     }
   ]
 }

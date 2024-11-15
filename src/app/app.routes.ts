@@ -12,8 +12,8 @@ export const routes: Routes = [
       { path: 'details', component: StepperComponent }, 
     ]
   },
-  // Optionally, you can add a wildcard route for 404 handling
-  { path: '**', redirectTo: '', pathMatch: 'full' } // Redirect unknown routes to the home
+ 
+  { path: '**', redirectTo: '', pathMatch: 'full' } 
 ];
 
 @NgModule({

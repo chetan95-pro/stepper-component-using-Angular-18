@@ -1,14 +1,14 @@
-/* Footer Styles */
-footer {
-    background-color: #3f51b5; /* Material indigo color */
-    color: white;
-    text-align: center;
-    padding: 10px 0; /* Reduced padding */
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 1000; /* Ensure it stays on top */
-  }
-  
+.mat-toolbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #132584;
+  color: white;
+  text-align: center;
+}
+p {
+  margin: auto;
+  width: 50%;
+  font-size: 12px;
+  padding: 10px;
+}
