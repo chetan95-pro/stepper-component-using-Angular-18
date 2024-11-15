@@ -1,6 +1,13 @@
-<mat-form-field appearance="fill">
-  <mat-label>{{ 'CHOOSE_LANGUAGE' | translate }}</mat-label>
-  <mat-select  (selectionChange)="changeLanguage($event.value)">
-    <mat-option mat-raised-button *ngFor="let lang of languages" [value]="lang">{{ lang | uppercase }}</mat-option>
-  </mat-select>
-</mat-form-field>
+<button mat-button [matMenuTriggerFor]="menu" class="language-selector-btn">
+  {{ "CHOOSE_LANGUAGE" | translate }}
+</button>
+
+<mat-menu #menu="matMenu">
+  <button
+    mat-menu-item
+    *ngFor="let lang of languages"
+    (click)="changeLanguage(lang)"
+  >
+    {{ lang | uppercase }}
+  </button>
+</mat-menu>

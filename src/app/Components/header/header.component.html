@@ -1,8 +1,33 @@
 <mat-toolbar color="primary">
   <span>E-Commerce</span>
   <span class="remaining-space"></span>
+
+  <!-- Cart Icon with Badge -->
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon matBadge="{{ cartItemCount }}" matBadgeColor="accent"
+      >shopping_cart</mat-icon
+    >
+  </button>
+
+  <!-- Cart Dropdown Menu -->
+  <mat-menu #menu="matMenu">
+    <div *ngIf="cartItems.length > 0; else noItems">
+      <mat-menu-item *ngFor="let item of cartItems">
+        <span [class.out-of-stock]="!item.available">{{ item.name }}</span>
+        <span *ngIf="!item.available" class="out-of-stock-label"
+          >(Out of Stock)</span
+        >
+      </mat-menu-item>
+    </div>
+    <ng-template #noItems>
+      <mat-menu-item>No items in cart</mat-menu-item>
+    </ng-template>
+  </mat-menu>
+
+  <!-- Login and Register buttons -->
   <button mat-raised-button class="nav-btn">Login</button>
   <button mat-raised-button class="nav-btn">Register</button>
+
+  <!-- Language selector -->
   <app-language-selector></app-language-selector>
 </mat-toolbar>
-

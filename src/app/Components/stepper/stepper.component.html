@@ -1,17 +1,15 @@
 <mat-horizontal-stepper linear #stepper>
-
-   <!-- Step 1: Product List (New Step) -->
-   <mat-step>
+  <!-- Step 1: Product List (New Step) -->
+  <mat-step>
     <ng-template matStepLabel>Product List</ng-template>
-    <app-product-list 
+    <app-product-list
       (viewProductDetails)="onViewProductDetails($event)"
-      (addToCart)="onAddToCart($event)">
+      (addToCart)="onAddToCart($event)"
+    >
     </app-product-list>
 
     <div>
-      <button mat-raised-button color="primary" matStepperNext>
-        Next
-      </button>
+      <button mat-raised-button color="primary" matStepperNext>Next</button>
     </div>
   </mat-step>
 
@@ -21,7 +19,12 @@
     <app-basic-details [formGroup]="basicForm"></app-basic-details>
 
     <div>
-      <button mat-raised-button color="primary" matStepperNext [disabled]="basicForm.invalid">
+      <button
+        mat-raised-button
+        color="primary"
+        matStepperNext
+        [disabled]="basicForm.invalid"
+      >
         Next
       </button>
     </div>
@@ -34,7 +37,12 @@
 
     <div>
       <button mat-button matStepperPrevious>Back</button>
-      <button mat-raised-button color="primary" (click)="submitAdvancedDetails(stepper)" [disabled]="advancedForm.invalid">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="submitAdvancedDetails(stepper)"
+        [disabled]="advancedForm.invalid"
+      >
         Submit
       </button>
     </div>
@@ -46,21 +54,33 @@
     <div class="review-container">
       <h3>Order Succefully</h3>
       <div class="review-details">
-        <div><strong>Name:</strong> {{ basicForm.get('name')?.value }}</div>
-        <div><strong>Address:</strong> {{ basicForm.get('address')?.value }}</div>
-        <div><strong>City:</strong> {{ basicForm.get('city')?.value }}</div>
-        <div><strong>Date of Birth:</strong> {{ basicForm.get('dob')?.value | date }}</div>
-        <div><strong>Occupation:</strong> {{ advancedForm.get('occupation')?.value }}</div>
-        <div><strong>Phone Number:</strong> {{ advancedForm.get('phoneNumber')?.value }}</div>
+        <div><strong>Name:</strong> {{ basicForm.get("name")?.value }}</div>
+        <div>
+          <strong>Address:</strong> {{ basicForm.get("address")?.value }}
+        </div>
+        <div><strong>City:</strong> {{ basicForm.get("city")?.value }}</div>
+        <div>
+          <strong>Date of Birth:</strong>
+          {{ basicForm.get("dob")?.value | date }}
+        </div>
+        <div>
+          <strong>Occupation:</strong>
+          {{ advancedForm.get("occupation")?.value }}
+        </div>
+        <div>
+          <strong>Phone Number:</strong>
+          {{ advancedForm.get("phoneNumber")?.value }}
+        </div>
       </div>
-
     </div>
 
     <div class="spacer"></div>
-    
+
     <!-- Reset Button -->
     <div class="reset-button-container">
-      <button mat-raised-button color="warn" (click)="resetStepper(stepper)">Reset</button>
+      <button mat-raised-button color="warn" (click)="resetStepper(stepper)">
+        Reset
+      </button>
     </div>
   </mat-step>
 </mat-horizontal-stepper>

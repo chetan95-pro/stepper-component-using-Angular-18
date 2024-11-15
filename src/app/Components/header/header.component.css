@@ -1,7 +1,41 @@
-.remaining-space{
+.remaining-space {
   flex: 1 1 auto;
 }
-.nav-btn{
+
+.nav-btn {
   margin-right: 0.5em;
   background-color: #132584;
+  color: white;
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+mat-icon-button {
+  margin-left: 20px;
+  /* margin-right: 30px; */
+  align-items: center;
+}
+
+.mat-badge {
+  background-color: transparent;
+  color: #fff;
+}
+
+mat-menu-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.out-of-stock {
+  color: red;
+  font-style: italic;
+}
+
+.out-of-stock-label {
+  color: red;
+  font-size: 12px;
 }
