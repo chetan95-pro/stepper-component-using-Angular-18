@@ -1,27 +1,39 @@
-# StepperComponent
+# StepperComponent - E-Commerce Website
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
+## Overview
 
-## Development server
+This project is part of an e-commerce website developed using **Angular 18**. The application features a **stepper component**, which is used to guide users through various stages, such as product selection, cart management, and checkout. The application is built with the goal of providing a user-friendly shopping experience.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+For the backend, **JSON Web Server** is used to simulate a REST API, allowing for mock data handling and reducing the need for a fully-fledged backend during development.
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+- **Stepper Component**: Guides users through different stages of the checkout process.
+- **Material Design**: Utilizes Angular Material components (like buttons, icons, menus, and toolbars) to create a sleek and modern interface.
+- **Responsive Design**: Ensures the application is optimized for different devices and screen sizes.
+- **Cart with Badge and Notifications**: Displays the cart items along with a badge showing the number of items in the cart.
+- **Mock API**: The application uses JSON Web Server to simulate product data, cart items, and user information.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## Prerequisites
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Before getting started, ensure that you have the following tools installed:
 
-## Running end-to-end tests
+- **Node.js** (LTS version)
+- **Angular CLI** (v18.2.10 or higher)
+- **Git** (for version control)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
+## Getting Started
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### 1. Clone the Repository
+
+Clone the project repository from GitHub:
+
+```bash
+git clone https://github.com/chetan95-pro/stepper-component-using-Angular-18.git
+cd stepper-component-using-Angular-18
