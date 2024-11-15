@@ -1,40 +1,41 @@
-/* Review Container */
+mat-horizontal-stepper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+}
+
+mat-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .review-container {
   padding: 20px;
-  border: 1px solid #ccc; 
-  border-radius: 8px;     
-  margin-top: 20px;       
-  background-color: #f9f9f9; 
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  flex-grow: 1;
 }
 
-
-.review-details {
-  margin-top: 10px; 
+button {
+  margin-top: 20px;
+  align-self: flex-start;
 }
-
-.review-details div {
-  margin-bottom: 10px; 
-}
-
-
-.error-message {
-  color: red;
-  font-size: 12px;
-  margin-top: 8px;
-}
-
 
 .spacer {
-  margin-top: 20px; 
+  margin-top: 20px;
 }
 
-
 .submit-button-container {
-  margin-top: 30px; 
-  text-align: center; 
+  margin-top: 30px;
+  text-align: center;
 }
 
 .submit-button-container button {
-  margin-top: 20px; 
-  display: inline-block; 
+  margin-top: 20px;
+  display: inline-block;
 }

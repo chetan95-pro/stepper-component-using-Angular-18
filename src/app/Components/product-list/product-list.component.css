@@ -1,13 +1,23 @@
 .product-list-container {
-  max-height: 500px; /* Set the desired height */
-  overflow-y: auto;  /* Enable vertical scrolling */
-  padding-right: 10px; /* Optional: Prevent content from getting hidden under the scrollbar */ 
+  max-height: 500px;
+  overflow-y: scroll;
+  padding-right: 10px;
+}
+
+.product-list-container::-webkit-scrollbar {
+  display: none;
+}
+
+.product-list-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .product-row {
   display: flex;
   flex-wrap: wrap;
 }
+
 .product-card {
   margin: 10px;
   flex: 1 0 23%;
@@ -40,7 +50,7 @@
 
 .product-rating {
   font-size: 14px;
-  color: #ff9800; 
+  color: #ff9800;
 }
 
 button {
@@ -48,15 +58,14 @@ button {
   margin-top: 10px;
 }
 
-
 @media (max-width: 768px) {
   .product-card {
-    width: 100%; 
-    max-width: 100%; 
+    width: 100%;
+    max-width: 100%;
   }
-  
+
   .product-row {
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
   }
 }
