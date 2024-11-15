@@ -1,6 +1,6 @@
 <div *ngIf="product; else loading">
     <mat-card>
-      <img [src]="product.imageUrl" alt="Product Image" />
+      <img [src]="product.image" alt="Product Image" />
       <mat-card-title>{{ product.name }}</mat-card-title>
       <mat-card-subtitle>{{ product.price | currency }}</mat-card-subtitle>
       <mat-card-content>

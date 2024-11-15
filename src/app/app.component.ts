@@ -10,4 +10,6 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [LayoutsComponent, RouterOutlet],
 })
-export class AppComponent { }
+export class AppComponent {
+  title: any;
+}

@@ -1,23 +1,23 @@
 <div *ngIf="products.length > 0; else noProducts">
-    <!-- Product list container with horizontal scrolling -->
-    <div class="product-list-container">
-      <div *ngFor="let product of products" class="product-card">
-        <img [src]="product.imageUrl" alt="{{ product.name }}" class="product-image">
-        <div class="product-info">
+  <div class="product-list-container">
+    <div *ngFor="let row of getRows(products)" class="product-row">
+      <mat-card *ngFor="let product of row" class="product-card">
+        <img mat-card-image [src]="product.image" alt="{{ product.name }}" class="product-image">
+        <mat-card-content class="product-info">
           <h3>{{ product.name }}</h3>
-          <p>{{ product.price | currency }}</p>
+          <p class="product-price">{{ product.price | currency }}</p>
+          <p class="product-rating">Rating: {{ product.rating.rate }} ({{ product.rating.count }} reviews)</p>
+        </mat-card-content>
+        <div class="product-button">
           <button mat-raised-button color="primary" (click)="onAddToCart(product)">
             Add to Cart
           </button>
-          <button mat-raised-button color="accent" (click)="onViewProductDetails(product)">
-            View Details
-          </button>
         </div>
-      </div>
+      </mat-card>
     </div>
   </div>
-  
-  <ng-template #noProducts>
-    <p>No products available.</p>
-  </ng-template>
-  
+</div>
+
+<ng-template #noProducts>
+  <p>No products available.</p>
+</ng-template>

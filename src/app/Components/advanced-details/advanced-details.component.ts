@@ -1,13 +1,13 @@
 import { Component, EventEmitter, Output, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { PaymentMethodDialogComponent } from '../payment-method-dialog/payment-method-dialog.component'; // Import the dialog component
+import { PaymentMethodDialogComponent } from '../payment-method-dialog/payment-method-dialog.component'; 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';  // Import MatSelectModule
-import { MatOptionModule } from '@angular/material/core';  // Import MatOptionModule
-import { ReactiveFormsModule } from '@angular/forms';  // Import ReactiveFormsModule
-import { CommonModule } from '@angular/common';  // Import CommonModule for ngIf
+import { MatSelectModule } from '@angular/material/select'; 
+import { MatOptionModule } from '@angular/material/core';  
+import { ReactiveFormsModule } from '@angular/forms';  
+import { CommonModule } from '@angular/common';  
 
 @Component({
   selector: 'app-advanced-details',
@@ -15,10 +15,10 @@ import { CommonModule } from '@angular/common';  // Import CommonModule for ngIf
   imports: [
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule,  // Add MatSelectModule
-    MatOptionModule,  // Add MatOptionModule
-    ReactiveFormsModule,  // Add ReactiveFormsModule
-    CommonModule  // Add CommonModule (to use *ngIf)
+    MatSelectModule,  
+    MatOptionModule,  
+    ReactiveFormsModule,  
+    CommonModule  
   ],
   templateUrl: './advanced-details.component.html',
 })
@@ -48,7 +48,7 @@ export class AdvancedDetailsComponent {
   selectPaymentMethod(paymentMethod: string) {
     // Open the dialog and pass the selected payment method
     const dialogRef = this.dialog.open(PaymentMethodDialogComponent, {
-      width: '400px',  // Adjust dialog width as needed
+      width: '400px',  
       data: { paymentMethod }
     });
 
