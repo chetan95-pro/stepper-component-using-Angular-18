@@ -1,32 +1,13 @@
 <mat-horizontal-stepper linear #stepper>
-  <!-- Step 1: Product List (New Step) -->
-  <mat-step>
-    <ng-template matStepLabel>Product List</ng-template>
-    <app-product-list
-      (viewProductDetails)="onViewProductDetails($event)"
-      (addToCart)="onAddToCart($event)"
-    >
-    </app-product-list>
-
-    <div>
-      <button mat-raised-button color="primary" matStepperNext>Next</button>
-    </div>
-  </mat-step>
-
+  <!-- Step 1: Product List (Not needed here) -->
+  
   <!-- Step 2: Contact Details -->
   <mat-step>
     <ng-template matStepLabel>Contact Details</ng-template>
     <app-basic-details [formGroup]="basicForm"></app-basic-details>
 
     <div>
-      <button
-        mat-raised-button
-        color="primary"
-        matStepperNext
-        [disabled]="basicForm.invalid"
-      >
-        Next
-      </button>
+      <button mat-raised-button color="primary" matStepperNext [disabled]="basicForm.invalid">Next</button>
     </div>
   </mat-step>
 
@@ -37,12 +18,7 @@
 
     <div>
       <button mat-button matStepperPrevious>Back</button>
-      <button
-        mat-raised-button
-        color="primary"
-        (click)="submitAdvancedDetails(stepper)"
-        [disabled]="advancedForm.invalid"
-      >
+      <button mat-raised-button color="primary" (click)="submitAdvancedDetails(stepper)" [disabled]="advancedForm.invalid">
         Submit
       </button>
     </div>
@@ -51,36 +27,58 @@
   <!-- Step 4: Review & Submit -->
   <mat-step>
     <ng-template matStepLabel>Review Details</ng-template>
+    
     <div class="review-container">
-      <h3>Order Succefully</h3>
+      <h3>Order Summary</h3>
+
+      <!-- Display user info here -->
       <div class="review-details">
         <div><strong>Name:</strong> {{ basicForm.get("name")?.value }}</div>
-        <div>
-          <strong>Address:</strong> {{ basicForm.get("address")?.value }}
-        </div>
+        <div><strong>Address:</strong> {{ basicForm.get("address")?.value }}</div>
         <div><strong>City:</strong> {{ basicForm.get("city")?.value }}</div>
-        <div>
-          <strong>Date of Birth:</strong>
-          {{ basicForm.get("dob")?.value | date }}
-        </div>
-        <div>
-          <strong>Occupation:</strong>
-          {{ advancedForm.get("occupation")?.value }}
-        </div>
-        <div>
-          <strong>Phone Number:</strong>
-          {{ advancedForm.get("phoneNumber")?.value }}
-        </div>
+        <div><strong>Date of Birth:</strong> {{ basicForm.get("dob")?.value | date }}</div>
+        <div><strong>Occupation:</strong> {{ advancedForm.get("occupation")?.value }}</div>
+        <div><strong>Phone Number:</strong> {{ advancedForm.get("phoneNumber")?.value }}</div>
       </div>
+
+      <!-- Cart Details Table -->
+      <div *ngIf="cartProducts.length > 0">
+        <h4>Cart Products</h4>
+        <mat-table [dataSource]="cartProducts" class="mat-elevation-z8">
+          <!-- Product Image Column -->
+          <ng-container matColumnDef="image" style="width: 50px;">
+            <th mat-header-cell *matHeaderCellDef> Image </th>
+            <td mat-cell *matCellDef="let item">
+              <img [src]="item.image" alt="{{ item.name }}" class="cart-item-image" />
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+            <mat-cell *matCellDef="let product">{{ product.name }}</mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="price">
+            <mat-header-cell *matHeaderCellDef>Price</mat-header-cell>
+            <mat-cell *matCellDef="let product">{{ product.price | currency }}</mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="quantity">
+            <mat-header-cell *matHeaderCellDef>Quantity</mat-header-cell>
+            <mat-cell *matCellDef="let product">{{ product.quantity }}</mat-cell>
+          </ng-container>
+
+          <!-- Table Rows -->
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </div>
+      
     </div>
 
     <div class="spacer"></div>
-
-    <!-- Reset Button -->
     <div class="reset-button-container">
-      <button mat-raised-button color="warn" (click)="resetStepper(stepper)">
-        Reset
-      </button>
+      <button mat-raised-button color="warn" (click)="resetStepper(stepper)">Reset</button>
     </div>
   </mat-step>
 </mat-horizontal-stepper>

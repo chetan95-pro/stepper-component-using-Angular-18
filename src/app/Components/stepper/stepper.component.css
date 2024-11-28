@@ -39,3 +39,14 @@ button {
   margin-top: 20px;
   display: inline-block;
 }
+.product-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+.cart-item-image {
+  width: 40px;  /* Reduced width */
+  height: 40px;  /* Reduced height */
+  object-fit: cover;  /* Ensures the image aspect ratio is preserved and fits within the container */
+  border-radius: 4px; /* Optional: Add rounded corners for aesthetics */
+}

@@ -1,10 +1,10 @@
-
 export interface Rating {
   rate: number;
   count: number;
 }
 
 export interface Product {
+available: any;
   id: number;
   name: string;
   title: string;
@@ -12,4 +12,5 @@ export interface Product {
   price: number;
   image: string;
   rating: Rating;
+  quantity?: number; // Optional property for cart management
 }

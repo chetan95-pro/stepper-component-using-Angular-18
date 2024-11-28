@@ -1,3 +1,9 @@
+<!-- Show Cart Count -->
+<div class="cart-container">
+  <span>Cart: {{ cartCount }} items</span>
+</div>
+
+<!-- Existing Product List -->
 <div *ngIf="products.length > 0; else noProducts">
   <div class="product-list-container">
     <div *ngFor="let row of getRows(products)" class="product-row">
@@ -8,7 +14,7 @@
           <p class="product-price">{{ product.price | currency }}</p>
           <p class="product-rating">Rating: {{ product.rating.rate }} ({{ product.rating.count }} reviews)</p>
         </mat-card-content>
-        <div class="product-button">
+        <div class="product-button-container">
           <button mat-raised-button color="primary" (click)="onAddToCart(product)">
             Add to Cart
           </button>

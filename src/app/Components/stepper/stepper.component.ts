@@ -2,16 +2,16 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CartService } from '../../services/cart.service';  // Import the cart service
 import { CommonModule } from '@angular/common';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BasicDetailsComponent } from '../basic-details/basic-details.component';
 import { AdvancedDetailsComponent } from '../advanced-details/advanced-details.component';
-import { RecordTableComponent } from '../record-table/record-table.component';
-import { ProductListComponent } from '../product-list/product-list.component'; // Import Product List
 
 @Component({
   selector: 'app-stepper',
@@ -25,20 +25,23 @@ import { ProductListComponent } from '../product-list/product-list.component'; /
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
+    MatSnackBarModule,
     BasicDetailsComponent,
     AdvancedDetailsComponent,
-    RecordTableComponent,
-    ProductListComponent,
   ],
 })
 export class StepperComponent implements OnInit, AfterViewInit {
   basicForm: FormGroup;
   advancedForm: FormGroup;
-  records: any[] = [];
-  isTableVisible = false;
-  submitted = false;
+  cartProducts: any[] = []; // To hold the cart products
+  displayedColumns: string[] = ['image','name', 'price', 'quantity']; // Columns for the table
+  router: any;
 
-  constructor(private fb: FormBuilder, private snackBar: MatSnackBar) {
+  constructor(
+    private fb: FormBuilder, 
+    private snackBar: MatSnackBar, 
+    private cartService: CartService // Inject the CartService
+  ) {
     this.basicForm = this.fb.group({
       name: ['', Validators.required],
       address: ['', Validators.required],
@@ -55,18 +58,16 @@ export class StepperComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // Subscribe to cart items from CartService
+    this.cartService.cartItems$.subscribe((items: any) => {
+      this.cartProducts = items; // Update the cartProducts array when cart changes
+    });
+  }
 
   ngAfterViewInit(): void {}
 
-  onAddToCart(product: any) {
-    console.log(`${product.name} added to the cart.`);
-  }
-
-  onViewProductDetails(product: any) {
-    console.log(`Viewing details for: ${product.name}`);
-  }
-
+  // Submit the advanced form and move to the next step
   submitAdvancedDetails(stepper: MatStepper) {
     if (this.advancedForm.valid) {
       const advancedDetails = this.advancedForm.value;
@@ -79,14 +80,10 @@ export class StepperComponent implements OnInit, AfterViewInit {
         phoneNumber: advancedDetails.phoneNumber,
       };
 
-      this.records.push(combinedDetails);
+      console.log(combinedDetails);
       this.openSnackBar('Advanced Details submitted successfully!', 'Close');
-      stepper.next();
+      stepper.next(); // Move to the next step in the stepper
     }
-  }
-
-  toggleTableVisibility() {
-    this.isTableVisible = !this.isTableVisible;
   }
 
   openSnackBar(message: string, action: string) {
@@ -96,14 +93,13 @@ export class StepperComponent implements OnInit, AfterViewInit {
   resetStepper(stepper: MatStepper) {
     this.basicForm.reset();
     this.advancedForm.reset();
-    this.records = [];
-    this.isTableVisible = false;
+    this.cartProducts = [];
     stepper.reset();
+    this.router.navigate(['/product-list']);
   }
-  deleteRecord(record: any) {
-    const index = this.records.indexOf(record);
-    if (index >= 0) {
-      this.records.splice(index, 1);
-    }
+
+  // Reset the cart items if needed
+  clearCart() {
+    this.cartService.clearCart();  // You can implement this method in the CartService
   }
 }

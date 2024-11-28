@@ -5,6 +5,7 @@ import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -20,7 +21,7 @@ export const appConfig: ApplicationConfig = {
         },
       })
     ),
-    provideAnimations(), // Use provideAnimations for animation setup
+    provideAnimations(), provideAnimationsAsync(), // Use provideAnimations for animation setup
   ],
 };
 

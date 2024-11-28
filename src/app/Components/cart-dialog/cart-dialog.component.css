@@ -1,0 +1,105 @@
+.mat-dialog-container {
+    width: 80%;
+    max-width: 900px;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;  /* Hide the scrollbar for the dialog container */
+  }
+  
+  .cart-table-container {
+    flex-grow: 1;      /* Allow the table container to take up remaining space */
+    overflow-y: auto;  /* Enable vertical scrolling within the table container */
+    -ms-overflow-style: none; /* Hide scrollbar for IE */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+  }
+  
+  .cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+    max-height: 400px; /* Set max-height for the table content */
+    overflow-y: auto;
+    display: block;
+  }
+  
+  .cart-table::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+  }
+  
+  .cart-table th,
+  .cart-table td {
+    padding: 10px;
+    text-align: left;
+    word-wrap: break-word;
+  }
+  
+  .cart-table th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+    position: sticky;  /* Make header sticky */
+    top: 0;            /* Stick to the top */
+    z-index: 1;        /* Ensure it stays above other content */
+  }
+  
+  .cart-item-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+  
+  .in-stock {
+    color: green;
+  }
+  
+  .out-of-stock {
+    color: red;
+  }
+  
+  .cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  .mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+  }
+  
+  .mat-dialog-actions button {
+    margin-left: 10px;
+  }
+  
+  .cart-table th.mat-header-cell,
+  .cart-table td.mat-cell {
+    max-width: 150px;
+  }
+  
+  .mat-dialog-title {
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  @media (max-width: 600px) {
+    .cart-table th,
+    .cart-table td {
+      padding: 8px;
+    }
+  
+    .cart-item-image {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .cart-total {
+      font-size: 14px;
+    }
+  
+    .mat-dialog-container {
+      width: 95%;
+    }
+  }
+  
