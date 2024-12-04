@@ -12,5 +12,5 @@ available: any;
   price: number;
   image: string;
   rating: Rating;
-  quantity?: number; // Optional property for cart management
+  quantity?: number;
 }

@@ -6,10 +6,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatBadgeModule } from '@angular/material/badge';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';  // Import MatDialog
+import { MatDialog } from '@angular/material/dialog'; 
 import { CartService } from '../../services/cart.service';
 import { Product } from '../../Model/product.model';
-import { CartDialogComponent } from '../cart-dialog/cart-dialog.component';  // Import CartDialogComponent
+import { CartDialogComponent } from '../cart-dialog/cart-dialog.component';  
 
 @Component({
   selector: 'app-header',
@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit {
   constructor(
     private cartService: CartService, 
     private router: Router, 
-    public dialog: MatDialog  // Inject MatDialog
+    public dialog: MatDialog  
   ) {}
 
   ngOnInit(): void {
@@ -43,10 +43,9 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  // Open Cart Dialog when cart button is clicked
   openCartDialog() {
     const dialogRef = this.dialog.open(CartDialogComponent, {
-      width: '400px',  // You can adjust the width here
+      width: '400px', 
       data: { items: this.cartItems }
     });
 

@@ -33,14 +33,14 @@ import { AdvancedDetailsComponent } from '../advanced-details/advanced-details.c
 export class StepperComponent implements OnInit, AfterViewInit {
   basicForm: FormGroup;
   advancedForm: FormGroup;
-  cartProducts: any[] = []; // To hold the cart products
-  displayedColumns: string[] = ['image','name', 'price', 'quantity']; // Columns for the table
+  cartProducts: any[] = []; 
+  displayedColumns: string[] = ['image','name', 'price', 'quantity']; 
   router: any;
 
   constructor(
     private fb: FormBuilder, 
     private snackBar: MatSnackBar, 
-    private cartService: CartService // Inject the CartService
+    private cartService: CartService 
   ) {
     this.basicForm = this.fb.group({
       name: ['', Validators.required],
@@ -59,15 +59,13 @@ export class StepperComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    // Subscribe to cart items from CartService
     this.cartService.cartItems$.subscribe((items: any) => {
-      this.cartProducts = items; // Update the cartProducts array when cart changes
+      this.cartProducts = items; 
     });
   }
 
   ngAfterViewInit(): void {}
 
-  // Submit the advanced form and move to the next step
   submitAdvancedDetails(stepper: MatStepper) {
     if (this.advancedForm.valid) {
       const advancedDetails = this.advancedForm.value;
@@ -82,7 +80,7 @@ export class StepperComponent implements OnInit, AfterViewInit {
 
       console.log(combinedDetails);
       this.openSnackBar('Advanced Details submitted successfully!', 'Close');
-      stepper.next(); // Move to the next step in the stepper
+      stepper.next(); 
     }
   }
 
@@ -98,8 +96,7 @@ export class StepperComponent implements OnInit, AfterViewInit {
     this.router.navigate(['/product-list']);
   }
 
-  // Reset the cart items if needed
   clearCart() {
-    this.cartService.clearCart();  // You can implement this method in the CartService
+    this.cartService.clearCart();  
   }
 }

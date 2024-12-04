@@ -7,11 +7,15 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class ProductService {
-  private apiUrl = 'http://localhost:3000/products'; // JSON server URL
+  private apiUrl = 'http://localhost:3000/products';
 
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.apiUrl);
+    return this.http.get<Product[]>(this.apiUrl);  
+  }
+
+  addProductToCart(product: Product): Observable<any> {
+    return this.http.post(`${this.apiUrl}/cart`, product);  
   }
 }

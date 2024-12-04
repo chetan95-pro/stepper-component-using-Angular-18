@@ -174,6 +174,7 @@ describe('ProductListComponent', () => {
         price: 100,
         image: 'image1.jpg',
         rating: { rate: 4.5, count: 10 },
+        available: undefined
       },
       {
         id: 2,
@@ -183,6 +184,7 @@ describe('ProductListComponent', () => {
         price: 200,
         image: 'image2.jpg',
         rating: { rate: 4.0, count: 20 },
+        available: undefined
       },
       {
         id: 3,
@@ -192,6 +194,7 @@ describe('ProductListComponent', () => {
         price: 300,
         image: 'image3.jpg',
         rating: { rate: 3.5, count: 30 },
+        available: undefined
       },
       {
         id: 4,
@@ -201,6 +204,7 @@ describe('ProductListComponent', () => {
         price: 400,
         image: 'image4.jpg',
         rating: { rate: 2.5, count: 40 },
+        available: undefined
       },
       {
         id: 5,
@@ -210,6 +214,7 @@ describe('ProductListComponent', () => {
         price: 500,
         image: 'image5.jpg',
         rating: { rate: 4.2, count: 50 },
+        available: undefined
       },
       {
         id: 6,
@@ -219,6 +224,7 @@ describe('ProductListComponent', () => {
         price: 600,
         image: 'image6.jpg',
         rating: { rate: 4.7, count: 60 },
+        available: undefined
       },
     ];
     const groupedProducts = component.getRows(products);

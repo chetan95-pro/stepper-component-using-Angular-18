@@ -8,7 +8,7 @@ import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
-import { CartService } from '../../services/cart.service';  // Import CartService
+import { CartService } from '../../services/cart.service';  
 
 @Component({
   selector: 'app-product-list',
@@ -28,52 +28,47 @@ export class ProductListComponent implements OnInit {
   products: Product[] = [];
   currentPage: number = 1;
   pageSize: number = 12;
-  cartCount: number = 0;  // Variable to store the cart count
+  cartCount: number = 0; 
   @Output() addToCart = new EventEmitter<Product>();
-  @Output() viewProductDetails = new EventEmitter<Product>(); // Declare the event emitter
+  @Output() viewProductDetails = new EventEmitter<Product>(); 
 
   constructor(
     private productService: ProductService,
     private snackBar: MatSnackBar,
     private router: Router,
-    private cartService: CartService  // Inject CartService
+    private cartService: CartService 
   ) {}
 
   ngOnInit(): void {
-    // Subscribe to cart items and update cart count
+    
     this.cartService.cartItems$.subscribe((items) => {
-      this.cartCount = items.length;  // Update cart count dynamically
+      this.cartCount = items.length;  
     });
 
-    // Fetch the list of products
     this.productService.getProducts().subscribe((products) => {
       this.products = products;
     });
   }
 
-  // Method to add product to cart
   onAddToCart(product: Product) {
-    this.cartService.addToCart(product); // Add product to cart via the service
+    this.cartService.addToCart(product);
     this.snackBar.open(`${product.name} added to cart!`, 'Close', {
       duration: 3000,
       horizontalPosition: 'center',
       verticalPosition: 'bottom',
     });
-    // Manually trigger cart count update after adding to cart
-    this.cartCount = this.cartService.getCartCount();  // Update the cart count
+    
+    this.cartCount = this.cartService.getCartCount();  
   }
 
-  // Emit event to view product details
   onViewProductDetails(product: Product) {
-    this.viewProductDetails.emit(product);  // Emit the product details event
+    this.viewProductDetails.emit(product);  
   }
 
-  // Navigate to checkout page
   onProceedToCheckout() {
     this.router.navigate(['/stepper']);
   }
 
-  // Utility to group products into rows (for displaying in a grid)
   getRows(products: Product[]): Product[][] {
     const rows = [];
     for (let i = 0; i < products.length; i += 4) {

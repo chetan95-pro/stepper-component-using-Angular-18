@@ -6,51 +6,46 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class CartService {
-  private cartItems: Product[] = []; // Initial empty cart
-  private cartItemsSubject = new BehaviorSubject<Product[]>(this.cartItems);  // Observable to track changes
+  private cartItems: Product[] = []; 
+  private cartItemsSubject = new BehaviorSubject<Product[]>(this.cartItems);  
 
   constructor() {}
 
-  // Get the current cart items as an observable
   get cartItems$() {
     return this.cartItemsSubject.asObservable();
   }
 
-  // Method to add a product to the cart
   addToCart(product: Product) {
-    const existingProduct = this.cartItems.find(p => p.id === product.id); // Check if the product is already in the cart
+    const existingProduct = this.cartItems.find(p => p.id === product.id); 
     if (existingProduct) {
-      // Ensure existingProduct.quantity is defined and add 1 to it
+      
       existingProduct.quantity = (existingProduct.quantity || 0) + 1;
     } else {
-      // Add new product with quantity 1
       this.cartItems.push({ ...product, quantity: 1 });
     }
-    this.cartItemsSubject.next(this.cartItems);  // Emit new state to the subscribers
+    this.cartItemsSubject.next(this.cartItems);  
   }
 
-  // Method to remove a product from the cart
   removeFromCart(product: Product) {
     const index = this.cartItems.findIndex(p => p.id === product.id);
     if (index !== -1) {
-      this.cartItems.splice(index, 1);  // Remove product from cart
-      this.cartItemsSubject.next(this.cartItems);  // Emit new state to the subscribers
+      this.cartItems.splice(index, 1);  
+      this.cartItemsSubject.next(this.cartItems);  
     }
   }
 
-  // Get the current cart count
   getCartCount(): number {
     return this.cartItems.length;
   }
 
-  // Get the current cart items (returns a copy to avoid direct mutation)
+  
   getCartItems(): Product[] {
-    return [...this.cartItems];  // Return a copy of the cart items array
+    return [...this.cartItems];  
   }
 
-  // Clear all items from the cart
+  
   clearCart() {
     this.cartItems = [];
-    this.cartItemsSubject.next(this.cartItems);  // Emit new state
+    this.cartItemsSubject.next(this.cartItems);  
   }
 }

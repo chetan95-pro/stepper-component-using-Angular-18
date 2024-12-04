@@ -1,11 +1,12 @@
 import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { routes } from './app.routes'; // Ensure this path is correct
+import { routes } from './app.routes'; 
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { AppRoutingModule } from './app.routes'; 
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -21,11 +22,11 @@ export const appConfig: ApplicationConfig = {
         },
       })
     ),
-    provideAnimations(), provideAnimationsAsync(), // Use provideAnimations for animation setup
+    provideAnimations(), provideAnimationsAsync(),
+    importProvidersFrom(AppRoutingModule),
   ],
 };
 
-// Factory function for the TranslateLoader
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
